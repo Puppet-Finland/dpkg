@@ -23,13 +23,13 @@
 #
 # == Examples
 #
-# class { 'dpkg::backup':
-#   status => 'present',
-#   output_dir => '/my/backup/dir',
-#   hour => '18',
-#   minute => '15',
-#   weekday => '*',
-# }
+#   class { 'dpkg::backup':
+#       status => 'present',
+#       output_dir => '/my/backup/dir',
+#       hour => '18',
+#       minute => '15',
+#       weekday => '*',
+#   }
 #
 class dpkg::backup
 (
