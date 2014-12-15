@@ -12,9 +12,9 @@
 # [*output_dir*]
 #   The directory where to output the files. Defaults to /var/backups/local.
 # [*hour*]
-#   Hour(s) when the package list is backed up. Defaults to 05.
+#   Hour(s) when the package list is backed up. Defaults to '5'.
 # [*minute*]
-#   Minute(s) when the package list is backed up. Defaults to 50.
+#   Minute(s) when the package list is backed up. Defaults to '50'.
 # [*weekday*]
 #   Weekday(s) when the package list is backed up. Defaults to * (all weekdays).
 # [*email*]
@@ -51,7 +51,7 @@ if hiera('manage_dpkg', 'true') != 'false' {
 
         $cron_command = "dpkg --get-selections|gzip > ${output_dir}/dpkg-selections.txt.gz"
 
-        cron { "dpkg-backup-cron":
+        cron { 'dpkg-backup-cron':
             ensure => $status,
             command => $cron_command,
             user => root,
@@ -59,7 +59,7 @@ if hiera('manage_dpkg', 'true') != 'false' {
             minute => $minute,
             weekday => $weekday,
             require => Class['localbackups'],
-            environment => "MAILTO=${email}",
+            environment => ["MAILTO=${email}"],
         }
     }
 }
