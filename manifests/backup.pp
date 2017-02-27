@@ -57,7 +57,6 @@ class dpkg::backup
             hour        => $hour,
             minute      => $minute,
             weekday     => $weekday,
-            require     => Class['localbackups'],
             environment => ["MAILTO=${email}"],
         }
     }

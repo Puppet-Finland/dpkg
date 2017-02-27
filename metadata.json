@@ -6,7 +6,5 @@
   "summary": "Setup dpkg",
   "source": "https://github.com/Puppet-Finland/dpkg.git",
   "project_page": "https://github.com/Puppet-Finland/dpkg",
-  "dependencies": [
-    { "name": "puppetfinland/localbackups", "version_requirement": ">= 0.5.1" }
-  ]
+  "dependencies": [ ]
 }
